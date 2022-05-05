@@ -1,0 +1,14 @@
+.route-404-div{
+    min-height: 80vh;
+    }
+    
+    .error-div h1{
+        color: #000000;
+        font-family: 'Rubik Wet Paint', cursive;
+        font-weight: 400;
+    }
+    .error-div h3{
+        color: #000000;
+        font-family: 'Rubik Wet Paint', cursive;
+        font-weight: 400;
+    }
