@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import google from '../../../images/google.png';
 import './Login.css';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 const Login = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
     if (error) {
@@ -17,10 +20,34 @@ const Login = () => {
             </div>
         );
     }
-    if(user){
+    if (user) {
         navigate('/')
     }
+    // ==========EMAIL PASSWORD LOGIN==========
+    
 
+    const handleEmailBlur = event => {
+        setEmail(event.target.value);
+    }
+    const handlePasswordBlur = event => {
+        setPassword(event.target.value);
+    }
+    const handleOnSubmit = event => {
+        signInWithEmailAndPassword(auth, email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                navigate('/') 
+                setEmail('');
+                setPassword('');
+            })
+            .catch(error => {
+                console.error(error);
+            })
+        event.preventDefault();
+    }
+
+    // ==========EMAIL PASSWORD LOGIN==========
 
     return (
         <div>
@@ -32,10 +59,10 @@ const Login = () => {
                         </div>
                     </div>
                     <div className="d-flex justify-content-center">
-                        <Form className='login-form w-50'>
+                        <Form onSubmit={handleOnSubmit} className='login-form w-50'>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Email address</Form.Label>
-                                <Form.Control type="email" placeholder="Enter email" />
+                                <Form.Control onBlur={handleEmailBlur} type="email" placeholder="Enter email" />
                                 {/* <Form.Text className="text-muted">
                                 We'll never share your email with anyone else.
                             </Form.Text> */}
@@ -43,13 +70,13 @@ const Login = () => {
 
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Form.Label>Password</Form.Label>
-                                <Form.Control type="password" placeholder="Password" />
+                                <Form.Control onBlur={handlePasswordBlur} type="password" placeholder="Password" />
                             </Form.Group>
                             <Button className='w-25' variant="secondary" type="submit">
 
                                 Login
                             </Button>
-                            <Button variant='link'>Forget Password?</Button>
+                            {/* <Button onClick={handlePasswordReset} variant='link'>Forget Password?</Button> */}
                             {/* <ToastContainer /> */}
                         </Form>
                     </div>
@@ -59,8 +86,8 @@ const Login = () => {
                         <h5 className='pt-2 px-2'>OR</h5>
                         <div className="or-right"></div>
                     </div>
-                    <div onClick={() => signInWithGoogle()} className="google-button d-flex justify-content-center">
-                        <Button className='w-25' variant="secondary" type="submit">
+                    <div className="google-button d-flex justify-content-center">
+                        <Button onClick={()=> signInWithGoogle()} className='w-25' variant="secondary" type="submit">
                             <img src={google} alt='' className="login-form-google-logo pe-3 w-25" />
                             Google
                         </Button>
