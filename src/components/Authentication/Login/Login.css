@@ -1,0 +1,22 @@
+.or-section {
+    display: flex;
+    padding-left: 25%;
+    padding-right: 25%;
+
+}
+
+.or-left {
+    height: 3px;
+    background-color: rgb(77, 77, 77);
+    width: 50% !important;
+}
+
+.or-right {
+    height: 3px;
+    background-color: rgb(77, 77, 77);
+    width: 50%;
+}
+
+.to-signup a {
+    text-decoration: none;
+}
