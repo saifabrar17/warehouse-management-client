@@ -1,0 +1,14 @@
+.blogs-div {
+    min-height: 80vh;
+}
+
+.blogs-heading h1 {
+    color: #000000;
+}
+.acoordion-div{
+    font-size: 20px;
+}
+
+.acoordion-div button{
+    font-size: 20px;
+}
