@@ -9,7 +9,7 @@ const NotFound = () => {
                         <div className='error-div text-center'>
                             <h3>Woops!</h3>
                             <h1>404</h1>
-                            <h1>not found!</h1>
+                            <h1>Page not found!</h1>
                         </div>
                     </div>
                 </div>

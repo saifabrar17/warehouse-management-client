@@ -4,10 +4,13 @@ import { Link, useNavigate } from 'react-router-dom';
 import google from '../../../images/google.png';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, sendEmailVerification } from 'firebase/auth';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Signup = () => {
     const navigate = useNavigate();
+    
     
     const [signInWithGoogle, user, error] = useSignInWithGoogle(auth);
     const [email, setEmail] = useState('');
@@ -35,7 +38,7 @@ const Signup = () => {
             const user = result.user;
             setEmail('');
             setPassword('');
-            // verifyEmail();
+            verifyEmail();
         })
         .catch(error =>{
             console.error(error);
@@ -46,6 +49,15 @@ const Signup = () => {
     if(user){
         navigate('/')
     }
+
+    const verifyEmail = () =>{
+        sendEmailVerification(auth.currentUser)
+        .then(()=>{
+            toast('Email verification sent');
+            
+        })
+    }
+
 
     return (
         <div>
@@ -78,7 +90,7 @@ const Signup = () => {
                         <Button className='w-25' variant="secondary" type="submit">
                             Sign Up
                         </Button>
-                        {/* <ToastContainer /> */}
+                        <ToastContainer />
                     </Form>
                 </div>
 

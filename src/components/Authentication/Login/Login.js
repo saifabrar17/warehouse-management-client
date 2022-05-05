@@ -5,7 +5,9 @@ import auth from '../../../firebase.init';
 import google from '../../../images/google.png';
 import './Login.css';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { sendPasswordResetEmail, signInWithEmailAndPassword } from 'firebase/auth';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
@@ -24,7 +26,7 @@ const Login = () => {
         navigate('/')
     }
     // ==========EMAIL PASSWORD LOGIN==========
-    
+
 
     const handleEmailBlur = event => {
         setEmail(event.target.value);
@@ -37,7 +39,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                navigate('/') 
+                navigate('/')
                 setEmail('');
                 setPassword('');
             })
@@ -48,7 +50,20 @@ const Login = () => {
     }
 
     // ==========EMAIL PASSWORD LOGIN==========
+    //=======PASS RESET=====
 
+    const handlePasswordReset = () => {
+        sendPasswordResetEmail(auth, email)
+            .then(() => {
+                toast('Password Reset Email sent! Please check inbox.');
+            })
+            .catch((error) => {
+
+
+            });
+    }
+
+    //=======PASS RESET=====
     return (
         <div>
             <div className='login-div'>
@@ -63,9 +78,7 @@ const Login = () => {
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Email address</Form.Label>
                                 <Form.Control onBlur={handleEmailBlur} type="email" placeholder="Enter email" />
-                                {/* <Form.Text className="text-muted">
-                                We'll never share your email with anyone else.
-                            </Form.Text> */}
+
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -76,8 +89,8 @@ const Login = () => {
 
                                 Login
                             </Button>
-                            {/* <Button onClick={handlePasswordReset} variant='link'>Forget Password?</Button> */}
-                            {/* <ToastContainer /> */}
+                            <Button onClick={handlePasswordReset} variant='link'>Forget Password?</Button>
+                            <ToastContainer />
                         </Form>
                     </div>
 
@@ -87,7 +100,7 @@ const Login = () => {
                         <div className="or-right"></div>
                     </div>
                     <div className="google-button d-flex justify-content-center">
-                        <Button onClick={()=> signInWithGoogle()} className='w-25' variant="secondary" type="submit">
+                        <Button onClick={() => signInWithGoogle()} className='w-25' variant="secondary" type="submit">
                             <img src={google} alt='' className="login-form-google-logo pe-3 w-25" />
                             Google
                         </Button>

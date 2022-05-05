@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import useProducts from '../../Hooks/useProducts';
 import Product from '../../ManageProducts/Product/Product';
 
