@@ -1,53 +1,43 @@
 [
     {
-      "id": "124e13b9-2d54-4b2f-a74d-a77b36d6ead",
       "name": "ULTRABOOST 22 SHOES",
       "supplier": "Addidas",
       "description": "Do velit do veniam sunt incididunt commodo occaecat minim anim veniam commodo culpa incididunt nostrud. Sint sit fugiat elit eu anim cillum officia  ",
       "price": 420,
       "quantity": 20,
-      "img": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fbaf991a78bc4896a3e9ad7800abcec6_9366/Ultraboost_22_Shoes_Black_GZ0127_01_standard.jpg"
-      
+      "img": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fbaf991a78bc4896a3e9ad7800abcec6_9366/Ultraboost_22_Shoes_Black_GZ0127_01_standard.jpg" 
     },
     {
-      "id": "124e13b9-2d54-4b2f-74d-a77b362d6ead",
       "name": "Asics GEl Kayano",
       "supplier": "Asics",
       "description": "Do velit do veniam sunt incididunt commodo occaecat minim anim veniam commodo culpa incididunt nostrud. Sint sit fugiat elit eu anim cillum officia  ",
       "price": 380,
       "quantity": 20,
-      "img": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fbaf991a78bc4896a3e9ad7800abcec6_9366/Ultraboost_22_Shoes_Black_GZ0127_01_standard.jpg"
-      
+      "img": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fbaf991a78bc4896a3e9ad7800abcec6_9366/Ultraboost_22_Shoes_Black_GZ0127_01_standard.jpg" 
     },
     {
-      "id": "124e13b9-2d54-4bf-a74d-a77b362d6ead",
       "name": "Apex Sports",
       "supplier": "Apex",
       "description": "Do velit do veniam sunt incididunt commodo occaecat minim anim veniam commodo culpa incididunt nostrud. Sint sit fugiat elit eu anim cillum officia  ",
       "price": 150,
       "quantity": 20,
-      "img": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fbaf991a78bc4896a3e9ad7800abcec6_9366/Ultraboost_22_Shoes_Black_GZ0127_01_standard.jpg"
-      
+      "img": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fbaf991a78bc4896a3e9ad7800abcec6_9366/Ultraboost_22_Shoes_Black_GZ0127_01_standard.jpg" 
     },
     {
-      "id": "124e13b9-2d54-4bf-a74d-a77b362d6ead",
       "name": "Lotto Casual",
       "supplier": "Lotto",
       "description": "Do velit do veniam sunt incididunt commodo occaecat minim anim veniam commodo culpa incididunt nostrud. Sint sit fugiat elit eu anim cillum officia  ",
       "price": 123,
       "quantity": 20,
-      "img": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fbaf991a78bc4896a3e9ad7800abcec6_9366/Ultraboost_22_Shoes_Black_GZ0127_01_standard.jpg"
-      
+      "img": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fbaf991a78bc4896a3e9ad7800abcec6_9366/Ultraboost_22_Shoes_Black_GZ0127_01_standard.jpg" 
     },
     {
-      "id": "124e139-2d54-4b2f-a74d-a77b362d6ead",
       "name": "Bata Sandal",
       "supplier": "Bata",
       "description": "Do velit do veniam sunt incididunt commodo occaecat minim anim veniam commodo culpa incididunt nostrud. Sint sit fugiat elit eu anim cillum officia  ",
       "price": 60,
       "quantity": 20,
-      "img": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fbaf991a78bc4896a3e9ad7800abcec6_9366/Ultraboost_22_Shoes_Black_GZ0127_01_standard.jpg"
-      
+      "img": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fbaf991a78bc4896a3e9ad7800abcec6_9366/Ultraboost_22_Shoes_Black_GZ0127_01_standard.jpg" 
     }
     
   ]

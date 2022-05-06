@@ -12,7 +12,7 @@ const BannerProducts = () => {
             <div className='products-mapped'>
                 {
                     products.slice(0,3).map(product => <Product
-                    key={product.id}
+                    key={product._id}
                     product={product}
                     ></Product>)
                 }
