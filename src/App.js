@@ -10,6 +10,7 @@ import Signup from './components/Authentication/Signup/Signup';
 import NotFound from './components/Shared/NotFound/NotFound';
 import Products from './components/ManageProducts/Products/Products';
 import ProductDetail from './components/ManageProducts/ProductDetail/ProductDetail';
+import AddProduct from './components/ManageProducts/AddProduct/AddProduct';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
+        <Route path='/add_new_product' element={<AddProduct></AddProduct>}></Route>
         <Route path='/products' element={<Products></Products>}></Route>
         <Route path='/product/:productId' element={<ProductDetail></ProductDetail>}></Route>
         <Route path='/*' element={<NotFound></NotFound>}></Route>
