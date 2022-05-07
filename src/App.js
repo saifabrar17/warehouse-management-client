@@ -11,6 +11,7 @@ import NotFound from './components/Shared/NotFound/NotFound';
 import Products from './components/ManageProducts/Products/Products';
 import ProductDetail from './components/ManageProducts/ProductDetail/ProductDetail';
 import AddProduct from './components/ManageProducts/AddProduct/AddProduct';
+import ManageAllProducts from './components/ManageProducts/ManageAllProducts/ManageAllProducts';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
         <Route path='/add_new_product' element={<AddProduct></AddProduct>}></Route>
+        <Route path='/manage_products' element={<ManageAllProducts></ManageAllProducts>}></Route>
         <Route path='/products' element={<Products></Products>}></Route>
         <Route path='/product/:productId' element={<ProductDetail></ProductDetail>}></Route>
         <Route path='/*' element={<NotFound></NotFound>}></Route>
