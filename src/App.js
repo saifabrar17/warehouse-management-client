@@ -12,6 +12,7 @@ import Products from './components/ManageProducts/Products/Products';
 import ProductDetail from './components/ManageProducts/ProductDetail/ProductDetail';
 import AddProduct from './components/ManageProducts/AddProduct/AddProduct';
 import ManageAllProducts from './components/ManageProducts/ManageAllProducts/ManageAllProducts';
+import RequireAuth from './components/Authentication/RequireAuth/RequireAuth';
 
 function App() {
   return (
@@ -23,9 +24,17 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
         <Route path='/add_new_product' element={<AddProduct></AddProduct>}></Route>
-        <Route path='/manage_products' element={<ManageAllProducts></ManageAllProducts>}></Route>
+        <Route path='/manage_products' element={
+          <RequireAuth>
+            <ManageAllProducts></ManageAllProducts>
+          </RequireAuth>
+        }></Route>
         <Route path='/products' element={<Products></Products>}></Route>
-        <Route path='/product/:productId' element={<ProductDetail></ProductDetail>}></Route>
+        <Route path='/product/:productId' element={
+          <RequireAuth>
+            <ProductDetail></ProductDetail>
+          </RequireAuth>
+        }></Route>
         <Route path='/*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
