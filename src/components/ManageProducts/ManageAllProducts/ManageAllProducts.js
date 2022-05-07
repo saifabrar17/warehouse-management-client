@@ -1,35 +1,24 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import useProducts from '../../Hooks/useProducts';
-
+import ProductsList from '../ProductsList/ProductsList';
+import './ManageAllProducts.css';
 const ManageAllProducts = () => {
     const [products, setProducts] = useProducts([]);
 
-    const handleDelete = id =>{
-        const proceed = window.confirm('Delete?');
-        if(proceed){
-            const url = `http://localhost:5000/product/${id}`;
-            fetch(url,{
-                method: 'DELETE'
-            })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                const remaining = products.filter(product => product._id !== id)
-                setProducts(remaining);
-            })
-
-        }
-    }
+    
 
     return (
-        <div className='w-50 mx-auto'>
-            <h2>Manage Products</h2>
+        <div className='w-50 manage-products-container mx-auto'>
+            <h2 className='text-center py-3'>Manage Products</h2>
+            
+            <Link className='btn btn-success my-3' to={'/add_new_product'}>Add New Item</Link>
+            
             {
-                products.map(product => <div
+                products.map(product => <ProductsList
                 key={product._id}
-                >
-                    <h4>{product.name}<button onClick={() => handleDelete(product._id)}>X</button></h4>
-                </div>)
+                product={product}
+                ></ProductsList>)
             }
         </div>
     );
