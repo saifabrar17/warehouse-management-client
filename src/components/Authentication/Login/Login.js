@@ -15,6 +15,17 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
+    const location = useLocation();
+
+    const from = location?.state?.from?.pathname || '/';
+
+    const handleGoogleSignIn = () =>{
+        signInWithGoogle()
+        .then(() =>{
+           navigate(from, {replace: true}) 
+        } )
+    }
+
     if (error) {
         return (
             <div>
@@ -100,7 +111,7 @@ const Login = () => {
                         <div className="or-right"></div>
                     </div>
                     <div className="google-button d-flex justify-content-center">
-                        <Button onClick={() => signInWithGoogle()} className='w-25' variant="secondary" type="submit">
+                        <Button onClick={handleGoogleSignIn} className='w-25' variant="secondary" type="submit">
                             <img src={google} alt='' className="login-form-google-logo pe-3 w-25" />
                             Google
                         </Button>
