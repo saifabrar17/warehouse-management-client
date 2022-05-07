@@ -21,17 +21,17 @@ const Header = () => {
                             <Nav className="ms-auto">
                                 {
                                     user?.uid ?
-                                    <Nav.Link as={Link} to='/manage'>Manage</Nav.Link> :
+                                    <Nav.Link as={Link} to='/manage_products'>Manage</Nav.Link> :
                                     ''
                                 }
                                 {
                                     user?.uid ?
-                                    <Nav.Link as={Link} to='/add'>Add</Nav.Link> :
+                                    <Nav.Link as={Link} to='/add_new_product'>Add</Nav.Link> :
                                     ''
                                 }
                                 {
                                     user?.uid ?
-                                    <Nav.Link as={Link} to='/my-items'>My Items</Nav.Link> :
+                                    <Nav.Link as={Link} to='/products'>My Items</Nav.Link> :
                                     ''
                                 }
                                 <Nav.Link as={Link} to='/blogs'>Blogs</Nav.Link>

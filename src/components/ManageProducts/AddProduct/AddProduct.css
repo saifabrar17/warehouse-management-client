@@ -1,0 +1,12 @@
+.addPIF{
+    /* border: none; */
+    border: 1px solid grey;
+    border-radius: 10px;
+    height: 40px;
+    border-color: gray;
+    outline: none;
+    padding-left: 10px;
+}
+.add-new-product-container{
+    min-height: 80vh;
+}
