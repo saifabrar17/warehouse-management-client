@@ -52,14 +52,14 @@ const ProductDetail = () => {
 
     return (
         <div className='container product-detail-cont'>
-            <h2 className='py-3 text-center'>Product Details</h2>
-            <div className="product-detail-card  w-50 mx-auto">
+            <h2 className='pt-3 text-center'>Product Details</h2>
+            <div className="product-detail-card border  w-50 mx-auto">
                 <div className='d-flex justify-content-center'>
-                    <img className='rounded' src={product.img} alt="product_image" />
+                    <img className='rounded pd-img' src={product.img} alt="product_image" />
                 </div>
                 <h4 className='py-2 '>{product.name}</h4>
-                <div className='d-flex justify-content-between'>
-                    <h5>Price: ${product.price}</h5>
+                <div className='d-flex  justify-content-between'>
+                    <h5>Price: TK {product.price}</h5>
                     <h5>Quantity: {product.quantity}</h5>
                 </div>
                 <p>Supplier: {product.supplier}</p>

@@ -13,7 +13,7 @@ const Products = () => {
         <div className="container">
             <div className="row">
                 <div className="col-12 py-5 text-center">
-                    <h2>Our Products</h2>
+                    <h2>Inventory</h2>
                 </div>
             </div>
             <div className='products-mapped'>

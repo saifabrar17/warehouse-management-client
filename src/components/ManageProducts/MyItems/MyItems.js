@@ -1,7 +1,7 @@
 // import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 const MyItems = () => {
     const [products, setProducts] = useState([]);
@@ -16,19 +16,6 @@ const MyItems = () => {
     }, [setProducts]);
 
 
-    // useEffect(() => {
-    //     const getProducts = async () => {
-    //         const email = user.email;
-    //         const url = `http://localhost:5000/myProducts?email=${email}`;
-    //         const { data } = await axios.get(url);
-    //         setProducts(data);
-    //         console.log(url);
-    //     }
-    //     getProducts();
-
-    // }, [user])
-
-
     const handleDelete = id => {
         const proceed = window.confirm('Delete?');
         if (proceed) {
@@ -38,7 +25,6 @@ const MyItems = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    // console.log(data);
                     const remaining = products.filter(product => product._id !== id)
                     setProducts(remaining);
                 })
@@ -51,8 +37,8 @@ const MyItems = () => {
     return (
         <div className='w-50 manage-products-container mx-auto'>
             <h2 className='text-center py-3'>My Items</h2>
-            <h3>{products.length}</h3>
-
+            {/* <h3>{products.length}</h3> */}
+            <Link className='btn btn-success my-3' to={'/add_new_product'}>Add New Item</Link>
             <div>
                 {
                     products.map(product => <div
@@ -73,17 +59,6 @@ const MyItems = () => {
                     </div>)
                 }
             </div>
-            {/* {
-                products.map(product => <div
-                    key={product._id}>
-                    <div className='product-list'>
-                        <div className="d-flex product-list-each justify-content-between">
-                            <p className='d-flex align-items-center'>{product.name}</p>
-                            <button className='btn btn-danger' onClick={() => handleDelete(product._id)}>Delete Item</button>
-                        </div>
-                    </div>
-                </div>)
-            } */}
 
         </div>
     );

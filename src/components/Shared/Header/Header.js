@@ -15,24 +15,25 @@ const Header = () => {
             <>
                 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                     <Container>
-                        <Navbar.Brand as={Link} to='/'>Inventory</Navbar.Brand>
+                        <Navbar.Brand as={Link} to='/'>PCHouse Inventory</Navbar.Brand>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="ms-auto">
+                                <Nav.Link as={Link} to='/inventory'>Inventory</Nav.Link>
                                 {
                                     user?.uid ?
-                                    <Nav.Link as={Link} to='/manage_products'>Manage</Nav.Link> :
-                                    ''
+                                        <Nav.Link as={Link} to='/manage_products'>Manage</Nav.Link> :
+                                        ''
                                 }
                                 {
                                     user?.uid ?
-                                    <Nav.Link as={Link} to='/add_new_product'>Add</Nav.Link> :
-                                    ''
+                                        <Nav.Link as={Link} to='/add_new_product'>Add</Nav.Link> :
+                                        ''
                                 }
                                 {
                                     user?.uid ?
-                                    <Nav.Link as={Link} to='/my_items'>My Items</Nav.Link> :
-                                    ''
+                                        <Nav.Link as={Link} to='/my_items'>My Items</Nav.Link> :
+                                        ''
                                 }
                                 <Nav.Link as={Link} to='/blogs'>Blogs</Nav.Link>
                                 {
