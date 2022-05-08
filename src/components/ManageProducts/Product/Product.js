@@ -6,8 +6,8 @@ const Product = ({product}) => {
     const {_id, name, img, quantity, description, price} = product;
 
 
-    const navigateToServiceDetail = (_id) =>{
-        navigate(`/product/${_id}`);
+    const navigateToProductDetail = (_id) =>{
+        navigate(`/inventory/${_id}`);
     }
 
 
@@ -21,7 +21,7 @@ const Product = ({product}) => {
                                 <p className="card-text">{description}</p>
                                 <p className="card-text">{quantity}</p>
 
-                                <button onClick={() => navigateToServiceDetail(_id)} 
+                                <button onClick={() => navigateToProductDetail(_id)} 
                                 className='btn btn-primary'>Update</button>
                             </div>
                     </div>

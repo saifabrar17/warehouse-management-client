@@ -16,7 +16,7 @@ const Signup = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-    const [errorz, setErrorz] = useState('');
+    const [error2, setError2] = useState('');
 
     const handleEmailBlur = event => {
         setEmail(event.target.value);
@@ -30,7 +30,7 @@ const Signup = () => {
     const handleOnSubmit = event =>{
         event.preventDefault();
         if(password !== confirmPassword){
-            setErrorz('Password did not match!')
+            setError2('Password did not match!')
             return;
         }
         createUserWithEmailAndPassword(auth, email, password)
@@ -43,7 +43,6 @@ const Signup = () => {
         .catch(error =>{
             console.error(error);
         })
-       
     }
 
     if(user){
@@ -85,7 +84,7 @@ const Signup = () => {
                             <Form.Label>Confirm Password</Form.Label>
                             <Form.Control onBlur={handleConfirmPasswordBlur} name="password2" type="password" placeholder="Password" required/>
                         </Form.Group>
-                        <p>{errorz}</p>
+                        <p>{error2}</p>
                         <p>{error}</p>
                         <Button className='w-25' variant="secondary" type="submit">
                             Sign Up

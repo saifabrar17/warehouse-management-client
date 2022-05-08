@@ -8,6 +8,7 @@ import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { sendPasswordResetEmail, signInWithEmailAndPassword } from 'firebase/auth';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Loading from '../../Shared/Loading/Loading';
 
 const Login = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
@@ -19,22 +20,23 @@ const Login = () => {
 
     const from = location?.state?.from?.pathname || '/';
 
-    const handleGoogleSignIn = () =>{
+    const handleGoogleSignIn = () => {
         signInWithGoogle()
-        .then(() =>{
-           navigate(from, {replace: true}) 
-        } )
+            .then(() => {
+                navigate(from, { replace: true })
+            })
     }
-
+    let errorMessage;
     if (error) {
-        return (
-            <div>
-                <p>Error: {error.message}</p>
-            </div>
-        );
+        errorMessage = <div>
+            <p>Error: {error?.msg}</p>
+        </div>;
     }
     if (user) {
         navigate('/')
+    }
+    if(loading){
+        return <Loading></Loading>;
     }
     // ==========EMAIL PASSWORD LOGIN==========
 
@@ -59,7 +61,6 @@ const Login = () => {
             })
         event.preventDefault();
     }
-
     // ==========EMAIL PASSWORD LOGIN==========
     //=======PASS RESET=====
 
@@ -100,6 +101,7 @@ const Login = () => {
 
                                 Login
                             </Button>
+                            {errorMessage}
                             <Button onClick={handlePasswordReset} variant='link'>Forget Password?</Button>
                             <ToastContainer />
                         </Form>

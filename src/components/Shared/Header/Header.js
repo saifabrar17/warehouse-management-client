@@ -31,7 +31,7 @@ const Header = () => {
                                 }
                                 {
                                     user?.uid ?
-                                    <Nav.Link as={Link} to='/products'>My Items</Nav.Link> :
+                                    <Nav.Link as={Link} to='/my_items'>My Items</Nav.Link> :
                                     ''
                                 }
                                 <Nav.Link as={Link} to='/blogs'>Blogs</Nav.Link>
