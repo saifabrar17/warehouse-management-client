@@ -53,7 +53,7 @@ const ProductDetail = () => {
     return (
         <div className='container product-detail-cont'>
             <h2 className='pt-3 text-center'>Product Details</h2>
-            <div className="product-detail-card border  w-50 mx-auto">
+            <div className="product-detail-card border  mx-auto">
                 <div className='d-flex justify-content-center'>
                     <img className='rounded pd-img' src={product.img} alt="product_image" />
                 </div>

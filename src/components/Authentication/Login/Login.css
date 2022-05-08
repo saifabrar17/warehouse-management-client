@@ -20,3 +20,18 @@
 .to-signup a {
     text-decoration: none;
 }
+
+@media (min-width: 0px) and (max-width:575px) {
+    .or-section {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .login-form {
+        width: 90% !important;
+    }
+
+    .login-form-google-logo {
+        width: 50% !important;
+    }
+}

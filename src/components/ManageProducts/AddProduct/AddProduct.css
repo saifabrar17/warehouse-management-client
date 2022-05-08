@@ -9,4 +9,13 @@
 }
 .add-new-product-container{
     min-height: 80vh;
+    width: 50%;
+}
+
+@media (min-width: 0px) and (max-width:575px){
+    .add-new-product-container{
+        
+        width: 95%;
+    }
+    
 }

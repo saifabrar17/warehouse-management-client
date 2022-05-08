@@ -32,44 +32,9 @@ const AddProduct = () => {
     }
 
 
-    // const { register, handleSubmit, reset, formState } = useForm();
-
-
-    // const onSubmit = data => {
-    //     const mailData = {
-    //         email: user.email
-    //     }
-    //     const url = `http://localhost:5000/product`
-    //     fetch(url, {
-    //         method: 'POST',
-    //         headers: {
-    //             'content-type': 'application/json'
-    //         },
-    //         body: JSON.stringify(data)
-    //     })
-        
-    //         .then(res => res.json())
-    //         .then(result => {
-    //             toast('Product Added Successfully');
-    //         })
-
-        
-    // }
-    // React.useEffect(() => {
-    //     if (formState.isSubmitSuccessful) {
-    //         reset({
-    //             name: '',
-    //             description: '',
-    //             supplier: '',
-    //             price: '',
-    //             quantity: '',
-    //             img: ''
-    //         });
-    //     }
-    // }, [formState, reset]);
 
     return (
-        <div className='w-50 add-new-product-container mx-auto'>
+        <div className='add-new-product-container mx-auto'>
             <h2 className='text-center py-3'>Add New Product</h2>
             <div>
                 <form className='d-flex flex-column' onSubmit={handleSubmit}>

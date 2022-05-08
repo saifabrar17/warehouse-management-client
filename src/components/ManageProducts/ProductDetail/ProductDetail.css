@@ -1,6 +1,7 @@
 .product-detail-card{
     padding-left: 5%;
     padding-right: 5%;
+    width: 50%;
 }
 .input-height{
     height: 38px!important;
@@ -18,4 +19,12 @@
 }
 .pd-img{
     width: 300px;
+}
+
+@media (min-width: 0px) and (max-width:575px){
+    .product-detail-card{
+        padding-left: 5%;
+        padding-right: 5%;
+        width: 100%;
+    }
 }

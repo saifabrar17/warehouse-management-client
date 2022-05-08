@@ -23,7 +23,7 @@ const ManageAllProducts = () => {
     }
 
     return (
-        <div className='w-50 manage-products-container mx-auto'>
+        <div className=' manage-products-container mx-auto'>
             <h2 className='text-center py-3'>Manage Products</h2>
 
             <Link className='btn btn-success my-3' to={'/add_new_product'}>Add New Item</Link>

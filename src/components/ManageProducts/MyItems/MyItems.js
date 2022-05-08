@@ -35,7 +35,7 @@ const MyItems = () => {
         navigate(`/inventory/${_id}`);
     }
     return (
-        <div className='w-50 manage-products-container mx-auto'>
+        <div className=' manage-products-container mx-auto'>
             <h2 className='text-center py-3'>My Items</h2>
             {/* <h3>{products.length}</h3> */}
             <Link className='btn btn-success my-3' to={'/add_new_product'}>Add New Item</Link>
