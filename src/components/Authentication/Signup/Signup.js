@@ -14,7 +14,7 @@ const Signup = () => {
     const from = location?.state?.from?.pathname || '/';
     
     
-    const [signInWithGoogle, error] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, error, user] = useSignInWithGoogle(auth);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -29,6 +29,7 @@ const Signup = () => {
     const handleConfirmPasswordBlur = event => {
         setConfirmPassword(event.target.value);
     }
+
     const handleOnSubmit = event =>{
         event.preventDefault();
         if(password !== confirmPassword){
@@ -49,7 +50,9 @@ const Signup = () => {
         })
     }
 
-    
+    if(user){
+        navigate('/')
+    }
 
     const verifyEmail = () =>{
         sendEmailVerification(auth.currentUser)
