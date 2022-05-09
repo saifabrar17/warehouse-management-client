@@ -10,7 +10,22 @@
     padding-top: 10%;
     padding-bottom: 10%;
 }
+.banner-header h3 {
+    font-size: 38px;
+    font-weight: bolder;
+    color: #252525;
+}
 
+.banner-header h2 {
+    font-size: 60px;
+    font-weight: bolder;
+    color: #252525;
+}
+
+.banner-header p {
+    font-size: 20px;
+    color: #252525;
+}
 @media (min-width: 0px) and (max-width:575px) {
     .banner {
 
@@ -19,20 +34,23 @@
 
     .banner-header {
         text-align: center;
-        color: #252525;
+        
     }
 
     .banner-header h3 {
         font-size: 28px;
         font-weight: bolder;
+        color: #252525;
     }
 
     .banner-header h2 {
         font-size: 30px;
         font-weight: bolder;
+        color: #252525;
     }
 
     .banner-header p {
         font-size: 18px;
+        color: #252525;
     }
 }

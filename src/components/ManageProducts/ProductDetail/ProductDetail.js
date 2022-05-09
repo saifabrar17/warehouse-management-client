@@ -6,7 +6,7 @@ const ProductDetail = () => {
     const { productId } = useParams();
     const [product, setProduct] = useState({});
     const [item, setItem] = useState({});
-    const url = `http://localhost:5000/product/${productId}`;
+    const url = `https://vast-fjord-97111.herokuapp.com/product/${productId}`;
     useEffect(() => {
         fetch(url)
             .then(res => res.json())

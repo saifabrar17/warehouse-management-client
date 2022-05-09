@@ -20,7 +20,7 @@ const AddProduct = () => {
             img: event.target.img.value
              
         }
-        axios.post('http://localhost:5000/product', addItem)
+        axios.post('https://vast-fjord-97111.herokuapp.com/product', addItem)
         .then(response =>{
             const {data} = response;
             if(data.insertedId){

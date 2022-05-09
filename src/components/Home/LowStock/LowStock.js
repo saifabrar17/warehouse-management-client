@@ -6,7 +6,7 @@ const LowStock = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/running_out')
+        fetch('https://vast-fjord-97111.herokuapp.com/running_out')
             .then(res => res.json())
             .then(data => setProducts(data));
     }, [])

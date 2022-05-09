@@ -8,7 +8,7 @@ const ManageAllProducts = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Delete?');
         if (proceed) {
-            const url = `http://localhost:5000/product/${id}`;
+            const url = `https://vast-fjord-97111.herokuapp.com/product/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
