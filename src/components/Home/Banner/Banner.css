@@ -1,13 +1,38 @@
-.banner{
+.banner {
     background-image: url('https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RWBzYW?ver=d8d8&q=90&m=6&h=472&w=1259&b=%23FFFFFFFF&l=f&o=t&aim=true');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 80vh;
 }
-.custom-adjust{
+
+.custom-adjust {
     padding-top: 10%;
     padding-bottom: 10%;
 }
 
+@media (min-width: 0px) and (max-width:575px) {
+    .banner {
 
+        min-height: 100vh;
+    }
+
+    .banner-header {
+        text-align: center;
+        color: #252525;
+    }
+
+    .banner-header h3 {
+        font-size: 28px;
+        font-weight: bolder;
+    }
+
+    .banner-header h2 {
+        font-size: 30px;
+        font-weight: bolder;
+    }
+
+    .banner-header p {
+        font-size: 18px;
+    }
+}

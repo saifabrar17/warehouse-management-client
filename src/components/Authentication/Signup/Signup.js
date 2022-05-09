@@ -41,10 +41,8 @@ const Signup = () => {
             console.log(user);
             setEmail('');
             setPassword('');
+            navigate(from, { replace: true })
             verifyEmail();
-            if(user){
-                navigate(from, { replace: true })
-            }
         })
         .catch(error =>{
             console.error(error);
@@ -57,6 +55,7 @@ const Signup = () => {
         sendEmailVerification(auth.currentUser)
         .then(()=>{
             toast('Email verification sent');
+            
         })
     }
     

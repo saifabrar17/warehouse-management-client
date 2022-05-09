@@ -33,9 +33,7 @@ const Login = () => {
     if(error){
         toast(error.message)
     }
-     if (user) {
-         navigate('/')
-     }
+
     // ==========EMAIL PASSWORD LOGIN==========
 
 
@@ -49,14 +47,16 @@ const Login = () => {
         signInWithEmailAndPassword(auth, email, password)
             .then(result => {
                 const user = result.user;
-                navigate('/')
+                navigate(from, { replace: true })
                 setEmail('');
                 setPassword('');
+                
             })
             .catch(error => {
                 errorMessage = error.message;
                 toast(errorMessage);
             })
+            
         event.preventDefault();
     }
     // ==========EMAIL PASSWORD LOGIN==========
