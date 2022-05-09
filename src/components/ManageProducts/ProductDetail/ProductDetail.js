@@ -32,7 +32,7 @@ const ProductDetail = () => {
         })
             .then(res => res.json())
             .then(data => setItem(data));
-
+            window.location.reload();
     }
     const handleRestock = (event) => {
         // event.preventDefault();
@@ -73,7 +73,7 @@ const ProductDetail = () => {
                         <div className='d-flex'>
                             <div>
                                 <form onSubmit={handleRestock}>
-                                    <input type="text" placeholder='Add Stock Quantity' className='input-height' name='restock' />
+                                    <input type="text" placeholder='Add Stock Quantity' className='input-height' name='restock' required/>
                                     <input type="submit" value="Restock" className='btn ms-1 btn-success' />
                                 </form>
                             </div>
@@ -86,45 +86,6 @@ const ProductDetail = () => {
                 </div>
             </div>
         </div>
-
-
-
-
-
-
-
-        // <div className='container product-detail-cont'>
-        //     <h2 className='pt-3 text-center'>Product Details</h2>
-        //     <div className="product-detail-card border  mx-auto">
-        //         <div className='d-flex justify-content-center'>
-        //             <img className='rounded pd-img' src={product.img} alt="product_image" />
-        //         </div>
-        //         <h4 className='py-2 '>{product.name}</h4>
-        //         <div className='d-flex  justify-content-between'>
-        //             <h5>Price: TK {product.price}</h5>
-        //             <h5>Quantity: {product.quantity}</h5>
-        //         </div>
-        //         <p>Supplier: {product.supplier}</p>
-        //         <div className="description">
-        //             <p>{product.description}</p>
-        //         </div>
-        //         <div className='d-flex justify-content-between'>
-        //             <div>
-        //             <form  onSubmit={handleRestock}>
-        //                 <input type="text" placeholder='Add Stock Quantity' className='input-height' name='restock' />
-        //                 <input type="submit" value="Restock" className='btn ms-1 btn-success'/>
-        //             </form>
-        //             </div>
-        //             <button className='btn btn-danger' onClick={handleDeliver}>Deliverd</button>
-        //         </div>
-        //         <div className='text-center pt-5 pb-3'>
-        //         <Link className='btn btn-success' to={'/manage_products'}>Manage All Inventory Items</Link>
-        //         </div>
-        //     </div>
-
-
-
-        // </div>
     );
 };
 

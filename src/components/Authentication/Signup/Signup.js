@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import google from '../../../images/google.png';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
@@ -10,9 +10,11 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Signup = () => {
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location?.state?.from?.pathname || '/';
     
     
-    const [signInWithGoogle, user, error] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, error] = useSignInWithGoogle(auth);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -36,27 +38,28 @@ const Signup = () => {
         createUserWithEmailAndPassword(auth, email, password)
         .then(result =>{
             const user = result.user;
+            console.log(user);
             setEmail('');
             setPassword('');
             verifyEmail();
+            if(user){
+                navigate(from, { replace: true })
+            }
         })
         .catch(error =>{
             console.error(error);
         })
     }
 
-    if(user){
-        navigate('/')
-    }
+    
 
     const verifyEmail = () =>{
         sendEmailVerification(auth.currentUser)
         .then(()=>{
             toast('Email verification sent');
-            
         })
     }
-
+    
 
     return (
         <div>
@@ -80,7 +83,7 @@ const Signup = () => {
                             <Form.Control onBlur={handlePasswordBlur} name="password1" type="password" placeholder="Password" required/>
                         </Form.Group>
                         {/* CONFIRM PASSWORD */}
-                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                        <Form.Group className="mb-3" controlId="formBasicConfirmPassword">
                             <Form.Label>Confirm Password</Form.Label>
                             <Form.Control onBlur={handleConfirmPasswordBlur} name="password2" type="password" placeholder="Password" required/>
                         </Form.Group>

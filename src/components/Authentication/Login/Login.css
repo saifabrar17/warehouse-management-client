@@ -1,3 +1,7 @@
+.login-div{
+    min-height: 80vh;
+}
+
 .or-section {
     display: flex;
     padding-left: 25%;

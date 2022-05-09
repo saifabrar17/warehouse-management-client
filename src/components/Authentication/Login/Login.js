@@ -17,7 +17,7 @@ const Login = () => {
     const navigate = useNavigate();
 
     const location = useLocation();
-
+    let errorMessage;
     const from = location?.state?.from?.pathname || '/';
 
     const handleGoogleSignIn = () => {
@@ -26,18 +26,16 @@ const Login = () => {
                 navigate(from, { replace: true })
             })
     }
-    let errorMessage;
-    if (error) {
-        errorMessage = <div>
-            <p>Error: {error?.msg}</p>
-        </div>;
-    }
-    if (user) {
-        navigate('/')
-    }
+   
     if(loading){
         return <Loading></Loading>;
     }
+    if(error){
+        toast(error.message)
+    }
+     if (user) {
+         navigate('/')
+     }
     // ==========EMAIL PASSWORD LOGIN==========
 
 
@@ -51,13 +49,13 @@ const Login = () => {
         signInWithEmailAndPassword(auth, email, password)
             .then(result => {
                 const user = result.user;
-                console.log(user);
                 navigate('/')
                 setEmail('');
                 setPassword('');
             })
             .catch(error => {
-                console.error(error);
+                errorMessage = error.message;
+                toast(errorMessage);
             })
         event.preventDefault();
     }
@@ -70,8 +68,7 @@ const Login = () => {
                 toast('Password Reset Email sent! Please check inbox.');
             })
             .catch((error) => {
-
-
+               toast('Some error occurd!')
             });
     }
 
@@ -101,10 +98,11 @@ const Login = () => {
 
                                 Login
                             </Button>
-                            {errorMessage}
+                           <span> </span>
                             <Button onClick={handlePasswordReset} variant='link'>Forget Password?</Button>
                             <ToastContainer />
                         </Form>
+                        {errorMessage}
                     </div>
 
                     <div className="or-section py-3 text-center d-flex align-items-center">
