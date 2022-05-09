@@ -13,6 +13,7 @@ import AddProduct from './components/ManageProducts/AddProduct/AddProduct';
 import ManageAllProducts from './components/ManageProducts/ManageAllProducts/ManageAllProducts';
 import MyItems from './components/ManageProducts/MyItems/MyItems';
 import RequireAuth from './components/Authentication/RequireAuth/RequireAuth';
+import LowStock from './components/Home/LowStock/LowStock';
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/low' element={<LowStock></LowStock>}></Route>
+
         <Route path='/signup' element={<Signup></Signup>}></Route>
         <Route path='/add_new_product' element={
           <RequireAuth>

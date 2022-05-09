@@ -18,6 +18,7 @@ const BannerProducts = () => {
                     ></Product>)
                 }
             </div>
+            
         </div>
     );
 };

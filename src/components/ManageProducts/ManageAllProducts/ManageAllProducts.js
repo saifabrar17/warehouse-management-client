@@ -1,5 +1,4 @@
 import React from 'react';
-import { Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useProducts from '../../Hooks/useProducts';
 import './ManageAllProducts.css';
@@ -40,8 +39,8 @@ const ManageAllProducts = () => {
                                 <p className='d-flex ms-2 align-items-center'>{product.name}</p>
                             </div>
                             <div className='d-flex justify-content-center align-items-center'>
-                            <p className='me-2'>Units: {product.quantity}</p>
-                            <button className='btn btn-danger' onClick={() => handleDelete(product._id)}>Delete Item</button>
+                                <p className='me-2'>Units: {product.quantity}</p>
+                                <button className='btn btn-danger' onClick={() => handleDelete(product._id)}>Delete Item</button>
                             </div>
                         </div>
                     </div>
