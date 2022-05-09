@@ -49,7 +49,7 @@ const MyItems = () => {
                                     <img className='mini-img rounded-circle me-2' src={product.img} alt="" />
                                 <p className='d-flex align-items-center'>{product.name}</p>
                                 </div>
-                                <div>
+                                <div className='my-items-btn-div'>
                                 <button onClick={() => navigateToProductDetail(product._id)}
                                     className='btn me-2 btn-primary'>Update</button>
                                 <button className='btn btn-danger' onClick={() => handleDelete(product._id)}>Delete Item</button>

@@ -20,6 +20,12 @@
 .to-signup a {
     text-decoration: none;
 }
+.login-form {
+    width: 50%;
+}
+.sign-up-form {
+    width: 50%;
+}
 
 @media (min-width: 0px) and (max-width:575px) {
     .or-section {
@@ -30,7 +36,9 @@
     .login-form {
         width: 90% !important;
     }
-
+    .sign-up-form {
+        width: 90%;
+    }
     .login-form-google-logo {
         width: 50% !important;
     }

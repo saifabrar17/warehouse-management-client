@@ -68,7 +68,7 @@ const Signup = () => {
                     </div>
                 </div>
                 <div className="d-flex justify-content-center">
-                    <Form className='sign-up-form w-50' onSubmit={handleOnSubmit}>
+                    <Form className='sign-up-form' onSubmit={handleOnSubmit}>
                         {/* Email */}
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Email Address</Form.Label>
@@ -86,7 +86,7 @@ const Signup = () => {
                         </Form.Group>
                         <p>{error2}</p>
                         <p>{error}</p>
-                        <Button className='w-25' variant="secondary" type="submit">
+                        <Button className='' variant="secondary" type="submit">
                             Sign Up
                         </Button>
                         <ToastContainer />
@@ -99,7 +99,7 @@ const Signup = () => {
                     <div className="or-right"></div>
                 </div>
                 <div className="google-button d-flex justify-content-center">
-                    <Button onClick={()=>signInWithGoogle()} className='w-25' variant="secondary" type="submit">
+                    <Button onClick={()=>signInWithGoogle()} className='' variant="secondary" type="submit">
                         <img src={google} alt='' className="login-form-google-logo pe-3 w-25" />
                         Google
                     </Button>

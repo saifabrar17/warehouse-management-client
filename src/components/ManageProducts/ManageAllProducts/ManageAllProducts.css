@@ -14,10 +14,19 @@
 .product-list-each p {
     margin-bottom: 0 !important;
 }
+.product-list-each img {
+    width: 40px;
+}
 
 @media (min-width: 0px) and (max-width:575px) {
     .manage-products-container {
         width: 90%;
     }
-
+    .my-items-btn-div{
+        text-align: center;
+    }
+    .my-items-btn-div button{
+        margin-bottom: 4px;
+        margin-top: 4px;
+    }
 }

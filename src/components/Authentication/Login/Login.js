@@ -86,7 +86,7 @@ const Login = () => {
                         </div>
                     </div>
                     <div className="d-flex justify-content-center">
-                        <Form onSubmit={handleOnSubmit} className='login-form w-50'>
+                        <Form onSubmit={handleOnSubmit} className='login-form'>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Email address</Form.Label>
                                 <Form.Control onBlur={handleEmailBlur} type="email" placeholder="Enter email" />
@@ -97,7 +97,7 @@ const Login = () => {
                                 <Form.Label>Password</Form.Label>
                                 <Form.Control onBlur={handlePasswordBlur} type="password" placeholder="Password" />
                             </Form.Group>
-                            <Button className='w-25' variant="secondary" type="submit">
+                            <Button  variant="secondary" type="submit">
 
                                 Login
                             </Button>
@@ -113,7 +113,7 @@ const Login = () => {
                         <div className="or-right"></div>
                     </div>
                     <div className="google-button d-flex justify-content-center">
-                        <Button onClick={handleGoogleSignIn} className='w-25' variant="secondary" type="submit">
+                        <Button onClick={handleGoogleSignIn} className='' variant="secondary" type="submit">
                             <img src={google} alt='' className="login-form-google-logo pe-3 w-25" />
                             Google
                         </Button>

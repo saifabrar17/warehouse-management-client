@@ -1,4 +1,24 @@
-.product-detail-card{
+.product-image img{
+    width: 350px;
+}
+.p-name{
+    color: #3749BB;
+}
+.p-price{
+    background-color: #F5F6FC;
+    border-radius: 10px;
+    padding: 5px 10px;
+    color: #666666;
+}
+.p-price span{
+    color: #000000;
+}
+.p-sup{
+    display: inline-block;
+}
+
+
+/* .product-detail-card{
     padding-left: 5%;
     padding-right: 5%;
     width: 50%;
@@ -19,7 +39,7 @@
 }
 .pd-img{
     width: 300px;
-}
+} */
 
 @media (min-width: 0px) and (max-width:575px){
     .product-detail-card{
