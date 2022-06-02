@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import './ProductDetail.css';
-
+ 
 const ProductDetail = () => {
     const { productId } = useParams();
     const [product, setProduct] = useState({});
